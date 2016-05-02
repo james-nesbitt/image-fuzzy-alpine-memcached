@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM quay.io/wunder/wunder-alpine-base
 MAINTAINER ilari.makela@wunderkraut.com
 
 ENV MEMCACHED_MEMORY 128
@@ -12,6 +12,8 @@ RUN apk --no-cache --update add memcached && \
     rm -rf /tmp/* && \
     rm -rf /var/cache/apk/* && \
     chmod 755 /start.sh
+
+USER app
 
 # Expose port 11211
 EXPOSE 11211
