@@ -13,8 +13,6 @@ RUN apk --no-cache --update add memcached && \
     rm -rf /var/cache/apk/* && \
     chmod 755 /start.sh
 
-USER app
-
 # Expose port 11211
 EXPOSE 11211
 
